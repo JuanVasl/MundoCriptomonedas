@@ -12,9 +12,9 @@ class ControllerCatalogoCriptomoneda extends Controller
     public function index()
     {
         //crud del catalogo de clientes
-        $cliente=Clcatalogo_criptomoneda::all();
+        $criptoCoin=catalogo_criptomoneda::all();
 
-        return view('ver_catalogo_cripto', compact('cliente'));
+        return view('ver_catalogo_cripto', compact('criptoCoin'));
     }
 
 
@@ -47,7 +47,7 @@ class ControllerCatalogoCriptomoneda extends Controller
             'precio_cripto' => $data['precio_cripto'],
         ]);
 
-    
+
         return redirect()->route('cripto.register')->with('status', 'Producto registrado');
     }
 }
