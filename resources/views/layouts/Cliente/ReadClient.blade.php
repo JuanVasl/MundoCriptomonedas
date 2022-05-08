@@ -40,7 +40,10 @@
                                 <div class="btn-group">
 
                                     <a href="{{route('edit', $clientes->id_cliente)}}">
-                                        <i class="fas fa-pencil-alt btn btn-outline-primary mb-2 mr-2"> Actualizar</i>
+                                        <i class="fas fa-pencil-alt btn btn-outline-warning mb-2 mr-2"> Actualizar</i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="far fa-trash-alt btn btn-outline-danger mb-2 mr-2"> Eliminar</i>
                                     </a>
                             </td>
 

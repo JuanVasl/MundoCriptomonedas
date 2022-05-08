@@ -12,9 +12,9 @@ class ControllerCatalogoCriptomoneda extends Controller
     public function index()
     {
         //crud del catalogo de clientes
-        $cliente=catalogo_criptomoneda::all();
+        $criptoCoin=catalogo_criptomoneda::all();
 
-        return view('criptomoneda.ver_catalogo_cripto', compact('cliente'));
+        return view('ver_catalogo_cripto', compact('criptoCoin'));
     }
 
     public function register(){
@@ -51,7 +51,38 @@ class ControllerCatalogoCriptomoneda extends Controller
             'precio_cripto' => $data['precio_cripto'],
         ]);
 
-    
+
         return redirect()->route('cripto.register')->with('status', 'Producto registrado');
+    }
+
+
+    public function editar(catalogo_criptomoneda $criptoCoin)
+    {
+
+        return view ('criptomoneda.UpdateCriptomoneda', compact('criptoCoin'));
+
+    }
+
+    
+    //para editar usuario
+    public function update(Request $request, catalogo_criptomoneda $criptoCoin)
+    {
+        $data = $this->validate($request, [
+            'codigo_cripto' => 'required',
+            'nombre_cripto' => 'required|max:250',
+            'descripcion_cripto' => 'required|max:300',
+            'precio_cripto'=>'required',
+
+        ]);
+        
+       $criptoCoin->update( [   
+           'codigo_cripto' => $data['codigo_cripto'],
+            'nombre_cripto' => $data['nombre_cripto'],
+            'descripcion_cripto' => $data['descripcion_cripto'],
+            'precio_cripto' => $data['precio_cripto'],
+
+        ]
+        );
+               return redirect('/listar')->with('Editar', 'ok');
     }
 }

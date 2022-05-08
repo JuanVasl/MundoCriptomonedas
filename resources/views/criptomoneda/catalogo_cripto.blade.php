@@ -1,5 +1,7 @@
 @extends("layouts.app")
 
+@section('title', 'Criptomoneda')
+
 @section("content")
 <div id="container-form">
 
@@ -42,12 +44,7 @@
                 </div>
         </form>
     </div>
-    <div class="p-3 bg-white mb-3 mt-5">
 
-    <div class="d-flex justify-content-center">
-
-    </div>
-</div>
 
 </div>
 
