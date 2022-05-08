@@ -1,5 +1,7 @@
 @extends("layouts.app")
 
+@section('title', 'Criptomoneda')
+
 @section("content")
 <div id="container-form">
 
