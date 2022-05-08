@@ -42,9 +42,15 @@
                                     <a href="{{route('edit', $clientes->id_cliente)}}">
                                         <i class="fas fa-pencil-alt btn btn-outline-warning mb-2 mr-2"> Actualizar</i>
                                     </a>
-                                    <a href="#">
-                                        <i class="far fa-trash-alt btn btn-outline-danger mb-2 mr-2"> Eliminar</i>
-                                    </a>
+
+                                    <form action="{{route('delete', $clientes->id_cliente)}}" method="POST">
+                                    @csrf @method('DELETE')
+
+                                        <button type="submit" onclick="return confirm('¿Desea eliminar al cliente?');" class="btn btn-outline-danger mb-2 mr-2">
+                                           <i class="far fa-trash-alt"> Eliminar</i> 
+                                        </button>
+                                    </form>
+                                </div>
                             </td>
 
 
