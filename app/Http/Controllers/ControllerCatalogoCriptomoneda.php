@@ -55,10 +55,10 @@ class ControllerCatalogoCriptomoneda extends Controller
 
     //Creamos funcion para eliminar los registros creados de criptomonedas
     public function delete($codigo_cripto){
-        $customer= catalogo_criptomoneda::findOrfail($codigo_cripto);
+        $criptoCoin= catalogo_criptomoneda::findOrfail($codigo_cripto);
 
         //Para eliminar las imagenes
-        if(Storage::delete('public/'.$customer->imagen)){
+        if(Storage::delete('public/'.$criptoCoin->imagen)){
             catalogo_criptomoneda::destroy($codigo_cripto);
         }
         return back()->with('criptomonedaEliminada','Criptomoneda Eliminada');
