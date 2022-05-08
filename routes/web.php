@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClienteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//ruta para el registro de cliente
+Route::get('/Create/Cliente', [ClienteController::class, 'create'])->name('create');
+Route::post('/Create/Save', [ClienteController::class, 'save'])->name('save');
+
+//ruta para la vista del crud
+Route::get('/read/Vista',  [ClienteController::class, 'read'])->name('read');
+
