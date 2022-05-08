@@ -8,10 +8,10 @@
   <div class="card-header" id="header-form">
     Formulario Criptomoneda
     </div>
-         <form action="{{route('customer.create')}}" method="POST" class="p-3 bg-white mb-3">
+         <form action="{{route('cripto.create')}}" method="POST" class="p-3 bg-white mb-3">
         @csrf
         @method('PUT') <!-- Pinche babosada -->
-     
+
         <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Codigo de criptomoneda</span>
@@ -37,7 +37,7 @@
                     </div>
                     <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" name="precio_cripto" id="precio_cripto" value="{{old('precio_cripto')}}">
                     <div class="input-group-append">
-                    
+
                     </div>
                     <button class="btn btn-primary" type="submit">Guardar</button>
 
@@ -46,7 +46,7 @@
         </form>
     </div>
     <div class="p-3 bg-white mb-3 mt-5">
-    
+
     <h3>Lista de Clientes</h3>
     <div class="table-responsive">
         <table class="table table-hover">
@@ -76,14 +76,14 @@
                         <a href="#" class="btn btn-danger">
                            Eliminar
                         </a>
-                    </td>                       
+                    </td>
                 </tr>
             @endforeach
             </tbody>
         </table>
     </div>
     <div class="d-flex justify-content-center">
-       
+
     </div>
 </div>
 

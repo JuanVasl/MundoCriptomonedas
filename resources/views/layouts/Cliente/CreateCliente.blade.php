@@ -8,9 +8,9 @@
             <div class="col-md-7 mt-5 ml-5" >
 
                 <!-- Mensaje Flash -->
-                @if(session('StudentSave'))
+                @if(session('Guardado'))
                     <div class="alert alert-success">
-                        {{ session('StudentSave') }}
+                        {{ session('Guardado') }}
                     </div>
                 @endif
             <!-- Validacion de Errores -->
