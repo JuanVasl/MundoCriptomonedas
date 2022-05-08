@@ -12,20 +12,24 @@ class ControllerCatalogoCriptomoneda extends Controller
     public function index()
     {
         //crud del catalogo de clientes
-        $cliente=Clcatalogo_criptomoneda::all();
+        $cliente=catalogo_criptomoneda::all();
 
         return view('ver_catalogo_cripto', compact('cliente'));
     }
-
 
     public function register(){
        $criptoCoin=catalogo_criptomoneda::all();
         return view('catalogo_cripto', compact('criptoCoin'));
     }
 
+    public function editform($id){
 
-    public function store(Request $request)
-    {
+        $editCripto=catalogo_criptomoneda::findOrFail($id);
+
+        return view('edit_cripto', compact('editCripto'));
+    }
+
+    public function store(Request $request){
         $data = request()->validate([
             'codigo_cripto' => 'required|max:4',
             'nombre_cripto' => 'required|max:250',

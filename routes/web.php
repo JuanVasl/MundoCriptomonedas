@@ -22,10 +22,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get( '/listar', [ControllerCatalogoCriptomoneda::class, 'index' ] )->name('cripto.index');
+Route::get('/listar', [ControllerCatalogoCriptomoneda::class, 'index' ] )->name('cripto.index');
+
 Route::get('/registrar',[ControllerCatalogoCriptomoneda::class, 'register'])->name('cripto.register');
-Route::post('/crear',[ControllerCatalogoCriptomoneda::class, 'store'])->name('cripto.create');
-Route::get('/listar',  [ControllerCatalogoCriptomoneda::class, 'index'])->name('listar');
+
+Route::get('/crear',[ControllerCatalogoCriptomoneda::class, 'store'])->name('cripto.create');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
