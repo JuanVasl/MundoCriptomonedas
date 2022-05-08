@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ControllerCatalogoCriptomoneda;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controller\ControllerCatalogoCriptomoneda;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,16 +20,12 @@ Route::get('/', function () {
     return view('auth.login');
 })->name("home");
 
-
-
-Route::get( '/listar', [\App\Http\Controllers\ControllerCatalogoCriptomoneda::class, 'index' ] )->name('cripto.index');
-Route::get('/registrar',[\App\Http\Controllers\ControllerCatalogoCriptomoneda::class, 'register'])->name('cripto.register');
-Route::post('/crear',[\App\Http\Controllers\ControllerCatalogoCriptomoneda::class, 'store'])->name('cripto.create');
-Route::get('/listar',  [ControllerCatalogoCriptomoneda::class, 'index'])->name('listar');
-
-
-
 Auth::routes();
+
+Route::get( '/listar', [ControllerCatalogoCriptomoneda::class, 'index' ] )->name('cripto.index');
+Route::get('/registrar',[ControllerCatalogoCriptomoneda::class, 'register'])->name('cripto.register');
+Route::post('/crear',[ControllerCatalogoCriptomoneda::class, 'store'])->name('cripto.create');
+Route::get('/listar',  [ControllerCatalogoCriptomoneda::class, 'index'])->name('listar');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

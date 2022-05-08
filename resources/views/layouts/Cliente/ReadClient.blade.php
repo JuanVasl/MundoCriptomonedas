@@ -9,6 +9,10 @@
                 <h2 class="text-center mt-5"> Catalogo de Clientes</h2>
 
 
+                <a class="btn btn-success mb-4" href="{{url('/Create/Cliente')}}">
+                    <i class="fas fa-user-plus"> AGREGAR</i>
+                </a>
+
                 <br>
                 <table class="table table-light table-bordered table-hover text-center">
                     <thead>
@@ -27,7 +31,7 @@
                     @foreach($cliente as $clientes)
                         <tr>
                             <td>{{$clientes->id_cliente}}</td>
-                            <td>$ {{$clientes->nombre_persona}}</td>
+                            <td>{{$clientes->nombre_persona}}</td>
                             <td>{{$clientes->telefono}}</td>
                             <td>{{$clientes->pais}}</td>
                             <td>{{$clientes->edad}}</td>

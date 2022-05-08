@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 class ClienteController extends Controller
 {
 
+    //para visualizar tabla
     public function read()
     {
         //crud del catalogo de clientes
@@ -18,7 +19,7 @@ class ClienteController extends Controller
     }
 
 
-
+    //Visualizar formulario
     public function create()
     {
         //cliente register
@@ -27,6 +28,7 @@ class ClienteController extends Controller
         return view('layouts.Cliente.CreateCliente', compact('cliente'));
     }
 
+    //Para guardar usuario
     public function save(Request $request)
     {
         //Validation Date
@@ -49,46 +51,26 @@ class ClienteController extends Controller
             'foto'=> $data ['foto'],
         ]);
 
-        return redirect()->route('Create')->with('status', 'Cliente registrado');
+        return redirect('/read/Vista')->with('Guardado', "Datos del cliente guardado");
 
 
 
     }
 
-    public function show(Cliente $cliente)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Cliente  $cliente
-     * @return \Illuminate\Http\Response
-     */
+    //para formulario editar
     public function edit(Cliente $cliente)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Cliente  $cliente
-     * @return \Illuminate\Http\Response
-     */
+
+    //para editar usuario
     public function update(Request $request, Cliente $cliente)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Cliente  $cliente
-     * @return \Illuminate\Http\Response
-     */
+   //para eliminar usuario
     public function destroy(Cliente $cliente)
     {
         //
