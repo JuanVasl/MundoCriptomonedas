@@ -16,7 +16,7 @@ use App\Http\Controller\ControllerCatalogoCriptomoneda;
 */
 
 Route::get('/', function () {
-    return view('catalogo_cripto');
+    return view('auth.login');
 })->name("home");
 
 
@@ -26,7 +26,7 @@ Route::get('/registrar',[\App\Http\Controllers\ControllerCatalogoCriptomoneda::c
 Route::post('/crear',[\App\Http\Controllers\ControllerCatalogoCriptomoneda::class, 'store'])->name('cripto.create');
 Route::get('/listar',  [ControllerCatalogoCriptomoneda::class, 'index'])->name('listar');
 
-return view('auth.login');
+
 
 Auth::routes();
 
