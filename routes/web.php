@@ -41,3 +41,7 @@ Route::get('/edit/{cliente}',  [ClienteController::class, 'edit'])->name('edit')
 Route::patch('/actualiza/{cliente}r',[ClienteController::class, 'update'])->name('actualizar');
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
