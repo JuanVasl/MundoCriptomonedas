@@ -35,13 +35,15 @@
 
                         <div class="card-body"  >
 
-                                <div class="row">
+                            <div class="row">
                                 <div class="col" >
                                     <input type="text" class="form-control" value="{{old('id_cliente')}}" placeholder="Numero de pasaporte" name="id_cliente">
                                 </div>
+
                                 <div class="col">
                                     <input type="text" name="nombre_persona" class="form-control col-md-9"  value="{{old('nombre_persona')}}" placeholder="Nombre del cliente">
                                 </div>
+
                             </div>
                             <br>
                             <div class="row">
@@ -55,14 +57,13 @@
                             <div class="col">
                                 <label for="" class="col-2"></label>
                                 <input type="text" name="edad" class="form-control col-md-9" value="{{old('edad')}}"  placeholder="Edad ">
-                            </div>
-                            <div class="row ">
+                            </div><br>
 
-                                <div class="text-center">
-                                    <label for="" class="col-3">Subir Fotografia:</label> <br>
-                                    <input placeholder="Subir Fotografia" name="foto"value="{{old('foto')}}" type="file" class="form-control" id="exampleInputPassword1" maxlengt="25"  >
-                                </div>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+                                <label class="custom-file-label" for="customFileLang">Subir fotografia</label>
                             </div>
+                            <br>
                             <br>
                             <div class="row form-group">
                                 <button id="guardado" type="submit"  class="btn btn-outline-success col-md-4 offset-2 mr-3" ><i class="fas fa-save"></i> Guardar Cliente</button>
