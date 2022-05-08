@@ -34,9 +34,9 @@
                             <td>{{$customer->precio_cripto}}</td>
                             <td>{{$customer->fotografia}}</td>
                             <td >
-                                <a href="#">
-                                    <i class="fas fa-pencil-alt btn btn-outline-warning mb-2 mr-2"> Actualizar</i>
-                                </a>
+                            <a href="{{route('editar', $customer->codigo_cripto)}}">
+                                        <i class="fas fa-pencil-alt btn btn-outline-warning mb-2 mr-2"> Actualizar</i>
+                                    </a>
                                 <a href="#">
                                     <i class="far fa-trash-alt btn btn-outline-danger mb-2 mr-2"> Eliminar</i>
                                 </a>

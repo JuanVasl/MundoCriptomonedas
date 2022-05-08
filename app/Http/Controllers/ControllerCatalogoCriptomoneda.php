@@ -17,15 +17,19 @@ class ControllerCatalogoCriptomoneda extends Controller
         return view('ver_catalogo_cripto', compact('criptoCoin'));
     }
 
-
     public function register(){
        $criptoCoin=catalogo_criptomoneda::all();
-        return view('catalogo_cripto', compact('criptoCoin'));
+        return view('criptomoneda.catalogo_cripto', compact('criptoCoin'));
     }
 
+    public function editform($id){
 
-    public function store(Request $request)
-    {
+        $editCripto=catalogo_criptomoneda::findOrFail($id);
+
+        return view('edit_cripto', compact('editCripto'));
+    }
+
+    public function store(Request $request){
         $data = request()->validate([
             'codigo_cripto' => 'required|max:4',
             'nombre_cripto' => 'required|max:250',
@@ -49,5 +53,36 @@ class ControllerCatalogoCriptomoneda extends Controller
 
 
         return redirect()->route('cripto.register')->with('status', 'Producto registrado');
+    }
+
+
+    public function editar(catalogo_criptomoneda $criptoCoin)
+    {
+
+        return view ('criptomoneda.UpdateCriptomoneda', compact('criptoCoin'));
+
+    }
+
+    
+    //para editar usuario
+    public function update(Request $request, catalogo_criptomoneda $criptoCoin)
+    {
+        $data = $this->validate($request, [
+            'codigo_cripto' => 'required',
+            'nombre_cripto' => 'required|max:250',
+            'descripcion_cripto' => 'required|max:300',
+            'precio_cripto'=>'required',
+
+        ]);
+        
+       $criptoCoin->update( [   
+           'codigo_cripto' => $data['codigo_cripto'],
+            'nombre_cripto' => $data['nombre_cripto'],
+            'descripcion_cripto' => $data['descripcion_cripto'],
+            'precio_cripto' => $data['precio_cripto'],
+
+        ]
+        );
+               return redirect('/listar')->with('Editar', 'ok');
     }
 }
