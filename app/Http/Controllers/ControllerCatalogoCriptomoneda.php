@@ -12,14 +12,14 @@ class ControllerCatalogoCriptomoneda extends Controller
     public function index()
     {
         //crud del catalogo de clientes
-        $cliente=catalogo_criptomoneda::all();
+        $customer=catalogo_criptomoneda::all();
 
-        return view('ver_catalogo_cripto', compact('cliente'));
+        return view('criptomoneda.ver_catalogo_cripto', compact('customer'));
     }
 
     public function register(){
        $criptoCoin=catalogo_criptomoneda::all();
-        return view('catalogo_cripto', compact('criptoCoin'));
+        return view('criptomoneda.catalogo_cripto', compact('criptoCoin'));
     }
 
     public function editform($id){
