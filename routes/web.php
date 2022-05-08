@@ -37,3 +37,7 @@ Route::post('/Create/Save', [ClienteController::class, 'save'])->name('save');
 Route::get('/read/Vista',  [ClienteController::class, 'read'])->name('read');
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
