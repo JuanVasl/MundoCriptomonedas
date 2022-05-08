@@ -3,14 +3,14 @@
 
 @section('title', 'Vista')
 @section('content')
-    <div class="container ml-5">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10 ml-5">
-                <h2 class="text-center mt-5"> Catalogo de Clientes</h2>
+                <h2 class="text-center mt-5" style="color: #2155cd"><i class="fas fa-list-alt" style="color: #2155cd"></i>  Catalogo de Clientes</h2>
 
 
-                <a class="btn btn-success mb-4" href="{{url('/Create/Cliente')}}">
-                    <i class="fas fa-user-plus"> AGREGAR</i>
+                <a class="btn btn-outline-warning mb-3"href="{{url('/Create/Cliente')}}">
+                    <i class="fas fa-user-plus"> Agregar Cliente</i>
                 </a>
 
                 <br>
@@ -36,6 +36,13 @@
                             <td>{{$clientes->pais}}</td>
                             <td>{{$clientes->edad}}</td>
                             <td>{{$clientes->fotografia}}</td>
+                            <td>
+                                <div class="btn-group">
+
+                                    <a href="{{route('edit', $clientes->id_cliente)}}">
+                                        <i class="fas fa-pencil-alt btn btn-outline-primary mb-2 mr-2"> Actualizar</i>
+                                    </a>
+                            </td>
 
 
                         </tr>
