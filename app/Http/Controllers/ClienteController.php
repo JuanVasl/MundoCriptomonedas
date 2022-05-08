@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Cliente;
 use http\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use phpDocumentor\Reflection\Types\Nullable;
 
 class ClienteController extends Controller
 {
@@ -38,7 +40,8 @@ class ClienteController extends Controller
             'telefono' => 'Required|string|max:15|',
             'pais' => 'Required|string|max:45',
             'edad' => 'Required|string|max:45',
-            'foto' => 'nullable',
+            'foto'=>'nullable',
+
 
         ]);
 
@@ -48,7 +51,8 @@ class ClienteController extends Controller
             'telefono' => $data['telefono'],
             'pais' => $data['pais'],
             'edad' => $data['edad'],
-            'foto'=> $data ['foto'],
+            'foto'=>'nullable',
+
         ]);
 
         return redirect('/read/Vista')->with('Guardado', "Datos del cliente guardado");
@@ -60,15 +64,37 @@ class ClienteController extends Controller
     //para formulario editar
     public function edit(Cliente $cliente)
     {
-        //
+
+        return view ('layouts.Cliente.UpdateClient', compact('cliente'));
+
     }
+
 
 
     //para editar usuario
     public function update(Request $request, Cliente $cliente)
     {
-        //
+        $validation = $this->validate($request, [
+            'nombre_persona' => 'Required|string|max:45',
+            'telefono' => 'Required|string|max:15|',
+            'pais' => 'Required|string|max:45',
+            'edad' => 'Required|string|max:45',
+            'foto'=>'nullable',
+
+        ]);
+       $cliente->update( [
+            'nombre_persona'=>$validation['nombre_persona'],
+            'telefono'=> $validation['telefono'],
+            'pais'=>$validation['pais'],
+            'edad'=>$validation['edad'],
+                'foto'=>'nullable',
+
+
+        ]
+        );
+               return redirect('/home')->with('Editar', 'ok');
     }
+
 
    //para eliminar usuario
     public function destroy(Cliente $cliente)
