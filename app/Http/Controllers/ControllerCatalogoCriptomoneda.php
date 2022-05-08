@@ -2,25 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Criptomoneda;
 use Illuminate\Http\Request;
 use App\Http\Requests\RequestCripto;
 use App\Models\catalogo_criptomoneda;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ControllerCatalogoCriptomoneda extends Controller
 {
     public function index()
     {
         //crud del catalogo de clientes
-        $cliente=Clcatalogo_criptomoneda::all();
+        $criptoCoin=catalogo_criptomoneda::all();
 
-        return view('ver_catalogo_cripto', compact('cliente'));
+        return view('criptomoneda.ver_catalogo_cripto', compact('criptoCoin'));
     }
 
 
     public function register(){
-       $criptoCoin=catalogo_criptomoneda::all();
-        return view('catalogo_cripto', compact('criptoCoin'));
+
+        return view('criptomoneda.catalogo_cripto');
     }
 
 
@@ -47,7 +49,18 @@ class ControllerCatalogoCriptomoneda extends Controller
             'precio_cripto' => $data['precio_cripto'],
         ]);
 
-    
+
         return redirect()->route('cripto.register')->with('status', 'Producto registrado');
+    }
+
+    //Creamos funcion para eliminar los registros creados de criptomonedas
+    public function delete($codigo_cripto){
+        $customer= catalogo_criptomoneda::findOrfail($codigo_cripto);
+
+        //Para eliminar las imagenes
+        if(Storage::delete('public/'.$customer->imagen)){
+            catalogo_criptomoneda::destroy($codigo_cripto);
+        }
+        return back()->with('criptomonedaEliminada','Criptomoneda Eliminada');
     }
 }
