@@ -28,6 +28,24 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <style>
+          
+
+            #container-form{
+                margin-top: 15px;
+                width: 70%;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            #header-form {
+                font-family: 'Nunito';
+                font-size: 22px;
+                margin-bottom: 5px;
+                margin-top: 5px;
+            }
+        </style>
 </head>
 <body style="background-color: #e8f9fd "> <!--color de fondo-->
     <div id="app" >
