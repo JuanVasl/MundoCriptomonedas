@@ -10,7 +10,6 @@
     </div>
          <form action="{{route('cripto.create')}}" method="POST" class="p-3 bg-white mb-3">
         @csrf
-        @method('PUT') <!-- Pinche babosada -->
 
         <div class="input-group mb-3">
                     <div class="input-group-prepend">
