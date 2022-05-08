@@ -30,7 +30,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <style>
-          
+
 
             #container-form{
                 margin-top: 15px;

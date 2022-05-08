@@ -36,4 +36,8 @@ Route::post('/Create/Save', [ClienteController::class, 'save'])->name('save');
 //ruta para la vista del crud
 Route::get('/read/Vista',  [ClienteController::class, 'read'])->name('read');
 
+//ruta actualizar registro de clientes
+Route::get('/edit/{cliente}',  [ClienteController::class, 'edit'])->name('edit');
+Route::patch('/actualiza/{cliente}r',[ClienteController::class, 'update'])->name('actualizar');
+
 
