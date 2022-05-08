@@ -9,10 +9,14 @@ use Illuminate\Support\Facades\DB;
 
 class ControllerCatalogoCriptomoneda extends Controller
 {
-    public function index(){
-        $criptoCoin = catalogo_criptomoneda::all();
-        return view('cripto.index', compact('criptoCoin'));
+    public function index()
+    {
+        //crud del catalogo de clientes
+        $cliente=Clcatalogo_criptomoneda::all();
+
+        return view('ver_catalogo_cripto', compact('cliente'));
     }
+
 
     public function register(){
        $criptoCoin=catalogo_criptomoneda::all();

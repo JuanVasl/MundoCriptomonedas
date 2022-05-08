@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClienteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controller\ControllerCatalogoCriptomoneda;
 
@@ -18,10 +19,24 @@ Route::get('/', function () {
     return view('catalogo_cripto');
 })->name("home");
 
-Route::get('mostrar', function () {
-    return view('ver_catalogo_cripto');
-})->name("ver");
+
 
 Route::get( '/listar', [\App\Http\Controllers\ControllerCatalogoCriptomoneda::class, 'index' ] )->name('cripto.index');
 Route::get('/registrar',[\App\Http\Controllers\ControllerCatalogoCriptomoneda::class, 'register'])->name('cripto.register');
 Route::post('/crear',[\App\Http\Controllers\ControllerCatalogoCriptomoneda::class, 'store'])->name('cripto.create');
+Route::get('/listar',  [ControllerCatalogoCriptomoneda::class, 'index'])->name('listar');
+
+return view('auth.login');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//ruta para el registro de cliente
+Route::get('/Create/Cliente', [ClienteController::class, 'create'])->name('create');
+Route::post('/Create/Save', [ClienteController::class, 'save'])->name('save');
+
+//ruta para la vista del crud
+Route::get('/read/Vista',  [ClienteController::class, 'read'])->name('read');
+
+
