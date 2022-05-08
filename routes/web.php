@@ -50,3 +50,5 @@ Route::delete('delete/{cliente}', [ClienteController::class,'delete'])->name('de
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/reglas', [ClienteController::class, 'reglas'])->name('reglas');

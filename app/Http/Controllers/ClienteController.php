@@ -104,4 +104,10 @@ class ClienteController extends Controller
 
        return back()->with('clienteDestroy', 'Cliente Eliminado'); //Para las alerts
    }
+
+    //para visualizar las reglas de oro
+    public function reglas()
+    {
+        return view('reglas');
+    }
 }
