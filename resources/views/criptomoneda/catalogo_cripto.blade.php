@@ -42,7 +42,6 @@
                     <button class="btn btn-primary" type="submit">Guardar</button>
 
                 </div>
-            </div>
         </form>
     </div>
 
