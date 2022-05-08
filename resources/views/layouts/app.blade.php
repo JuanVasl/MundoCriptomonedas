@@ -54,6 +54,41 @@
                 <a class="navbar-brand" href="{{ url('/') }}" >
                     {{ config('app.name', 'Laravel') }}
                 </a>
+                <form>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="https://github.com/JuanVasl/MundoCriptomonedas.git" >
+                                <i class="fa-2x fab fa-github-square"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="" style="color: #E74C3C;">
+                                <i class="fa-2x fab fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/read/Vista" style="color: #2155cd;">
+                            <i class=" fa-2x fas fa-users"></i>
+                            </a>
+                        </li>
+                        <a class="nav-link" href="" style="color: #E74C3C;">
+                        
+                        </li class="nav-item"> 
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/" style="color: #E74C3C;">
+                            <i class=" fa-2x row mb-0 fab fa-bitcoin"></i>
+                            </a>
+                        </li>
+                        <a> 
+
+
+                        </a>
+
+
+                        </li>
+                    </ul>
+                </form>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

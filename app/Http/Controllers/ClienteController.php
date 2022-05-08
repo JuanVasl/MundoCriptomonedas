@@ -96,9 +96,12 @@ class ClienteController extends Controller
     }
 
 
+   
    //para eliminar usuario
-    public function destroy(Cliente $cliente)
-    {
-        //
-    }
+   public function delete($id_cliente)
+   {
+       Cliente::destroy($id_cliente);
+
+       return back()->with('clienteDestroy', 'Cliente Eliminado'); //Para las alerts
+   }
 }

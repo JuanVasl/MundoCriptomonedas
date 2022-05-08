@@ -43,6 +43,8 @@ Route::get('/read/Vista',  [ClienteController::class, 'read'])->name('read');
 Route::get('/edit/{cliente}',  [ClienteController::class, 'edit'])->name('edit');
 Route::patch('/actualiza/{cliente}r',[ClienteController::class, 'update'])->name('actualizar');
 
+//ruta para eliminar
+Route::delete('delete/{cliente}', [ClienteController::class,'delete'])->name('delete');
 
 
 Auth::routes();
