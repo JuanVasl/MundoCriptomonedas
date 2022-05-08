@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controller\ControllerCatalogoCriptomoneda;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('catalogo_cripto');
+})->name("home");
+
+Route::get('mostrar', function () {
+    return view('ver_catalogo_cripto');
+})->name("ver");
+
+Route::get( '/listar', [\App\Http\Controllers\ControllerCatalogoCriptomoneda::class, 'index' ] )->name('cripto.index');
+Route::get('/registrar',[\App\Http\Controllers\ControllerCatalogoCriptomoneda::class, 'register'])->name('cripto.register');
+Route::post('/crear',[\App\Http\Controllers\ControllerCatalogoCriptomoneda::class, 'store'])->name('cripto.create');
