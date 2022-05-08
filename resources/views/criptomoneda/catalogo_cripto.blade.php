@@ -9,7 +9,7 @@
     Formulario Criptomoneda
     </div>
          <form action="{{route('cripto.create')}}" method="POST" class="p-3 bg-white mb-3">
-        @csrf  @method('GET')
+        @csrf
         <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Codigo de criptomoneda</span>
@@ -40,10 +40,15 @@
                     <button class="btn btn-primary" type="submit">Guardar</button>
 
                 </div>
-            </div>
         </form>
     </div>
-    
+    <div class="p-3 bg-white mb-3 mt-5">
+
+    <div class="d-flex justify-content-center">
+
+    </div>
+</div>
+
 </div>
 
 @endsection

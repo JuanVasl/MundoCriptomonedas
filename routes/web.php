@@ -22,11 +22,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/listar', [ControllerCatalogoCriptomoneda::class, 'index' ] )->name('cripto.index');
+Route::get('/listar', [ControllerCatalogoCriptomoneda::class, 'index' ] )->name('cripto.index'); //Ruta para ver tabla criptomoneda
+Route::get('/registrar',[ControllerCatalogoCriptomoneda::class, 'register'])->name('cripto.register');// Registro de criptomoneda
+Route::post('/crear',[ControllerCatalogoCriptomoneda::class, 'store'])->name('cripto.create');//Guardar criptomonedas
 
-Route::get('/registrar',[ControllerCatalogoCriptomoneda::class, 'register'])->name('cripto.register');
-
-Route::get('/crear',[ControllerCatalogoCriptomoneda::class, 'store'])->name('cripto.create');
+Route::delete('/delete/{codigo_cripto}',[ControllerCatalogoCriptomoneda::class, 'delete']) ->name('delete');//Ruta para eliminar criptomonedas
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -38,3 +38,7 @@ Route::post('/Create/Save', [ClienteController::class, 'save'])->name('save');
 Route::get('/read/Vista',  [ClienteController::class, 'read'])->name('read');
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
