@@ -16,9 +16,10 @@
 
     <!--SweetAlert2-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script src="sweetalert2.min.js"></script>
     <link rel="stylesheet" href="sweetalert2.min.css">
-
+    @yield('js')
 
     <!--Para iconoz-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -33,18 +34,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    
-    <script>
-                                function guardarCripto() {
-                                Swal.fire({
-                                position: 'center',
-                                icon: 'success',
-                                title: 'Se ha guardado la criptomoneda',
-                                showConfirmButton: false,
-                                timer: 15000
-                                })
-                                }
-                                </script>
 
     <style>
 
@@ -71,6 +60,46 @@
                 <a class="navbar-brand" href="{{ url('/') }}" >
                     {{ config('app.name', 'Laravel') }}
                 </a>
+                <form>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="https://github.com/JuanVasl/MundoCriptomonedas.git" >
+                                <i class="fa-2x fab fa-github-square"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="" style="color: #E74C3C;">
+                                <i class="fa-2x fab fa-youtube"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/read/Vista" style="color: #2155cd;">
+                            <i class=" fa-2x fas fa-users"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/listar" style="color: #E74C3C;">
+                            <i class=" fa-2x row mb-0 fab fa-bitcoin"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/" style="color: #E74C3C;">
+                            <i class=" fa-2x  fa fa-file-text" aria-hidden="true"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/reglas" style="color: #2155CD;">
+                            <i class=" fa-2x fas fa-file-word"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+                </form>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -123,10 +152,8 @@
         <main class="py-4">
             @yield('content')
         </main>
-    </div>
-    <script src="{{ asset('js/app.js') }}"></script>
-    @yield('js')
-
-
+    </div>        
+    <script src="{{asset('js/app.js')}}"></script>
+ @yield('js')<!--Ayuda con mostrar el mensaje de error-->
 </body>
 </html>

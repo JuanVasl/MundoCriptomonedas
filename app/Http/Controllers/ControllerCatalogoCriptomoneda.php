@@ -52,7 +52,7 @@ class ControllerCatalogoCriptomoneda extends Controller
         ]);
 
 
-        return redirect()->route('cripto.register')->with('status', 'Producto registrado');
+        return redirect()->route('cripto.index')->with('status', 'Producto registrado');
     }
 
 
@@ -63,7 +63,6 @@ class ControllerCatalogoCriptomoneda extends Controller
 
     }
 
-    
     //para editar usuario
     public function update(Request $request, catalogo_criptomoneda $criptoCoin)
     {
@@ -74,8 +73,8 @@ class ControllerCatalogoCriptomoneda extends Controller
             'precio_cripto'=>'required',
 
         ]);
-        
-       $criptoCoin->update( [   
+
+       $criptoCoin->update( [
            'codigo_cripto' => $data['codigo_cripto'],
             'nombre_cripto' => $data['nombre_cripto'],
             'descripcion_cripto' => $data['descripcion_cripto'],
@@ -84,5 +83,14 @@ class ControllerCatalogoCriptomoneda extends Controller
         ]
         );
                return redirect('/listar')->with('Editar', 'ok');
+    }
+
+    //para eliminar criptomoneda
+
+    public function deletecripto($codigo_cripto){
+
+        catalogo_criptomoneda::destroy($codigo_cripto);
+
+        return back()->with('criptomonedaDestroy', 'Criptomoneda Eliminada'); //Para las alertas
     }
 }

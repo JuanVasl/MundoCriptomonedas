@@ -37,7 +37,7 @@
                             <div class="row">
                                 <div class="col-lg">
                                     <div class="input-group-prepend">
-                                            
+                                            <span class="input-group-text mb-2" id="basic-addon1">Codigo Criptomoneda</span>
                                     </div>
                                     <input type="text" class="form-control"
                                            value="{{old('codigo_cripto',$criptoCoin->codigo_cripto )}}" readonly
@@ -47,7 +47,7 @@
 
                                 <div class="col-lg">
                                     <div class="input-group-prepend">
-                                           
+                                            <span class="input-group-text mb-2" id="basic-addon1">Nombre Criptomoneda</span>
                                     </div>
                                     <input type="text" name="nombre_cripto" class="form-control"
                                            value="{{old('nombre_cripto', $criptoCoin->nombre_cripto)}}"
@@ -58,14 +58,14 @@
                             <div class="row mt-3">
                                 <div class="col-lg">
                                     <div class="input-group-prepend">
-                                       
+                                            <span class="input-group-text mb-2" id="basic-addon1">Descripcion Criptomoneda</span>
                                     </div>
                                     <input type="text" name="descripcion_cripto" class="form-control"
                                            value="{{old('descripcion_cripto', $criptoCoin->descripcion_cripto)}}" placeholder="Descripcion">
                                 </div>
                                 <div class="col-lg">
                                      <div class="input-group-prepend">
-                                        
+                                            <span class="input-group-text mb-2" id="basic-addon1">Precio Criptomoneda</span>
                                     </div>
                                     <input type="text" name="precio_cripto" class="form-control"
                                            value="{{old('precio_cripto', $criptoCoin->precio_cripto)}}" placeholder="Pais ">
@@ -74,23 +74,9 @@
 
                             <div class="row form-group mt-3">
                                     <button id="guardado" type="submit"
-                                            class="btn btn-outline-success col-md-4 offset-2 mr-3" onclick="modCripto()"><i
-                                            class="fas fa-save"></i> Modificar
+                                            class="btn btn-outline-success col-md-4 offset-2 mr-3"><i
+                                            class="fas fa-save"></i> Modificar Cripto
                                     </button>
-
-                                    <script>
-                                function modCripto() {
-                                Swal.fire({
-                                position: 'center',
-                                icon: 'success',
-                                title: 'Se actualizado la criptomoneda',
-                                showConfirmButton: true,
-                                timer: 15000
-                                })
-                                }
-                                </script>
-
-
                                     <a class="btn btn-outline-danger btn-xs col-md-4" href=" {{ url('/listar') }}"><i
                                             class="fas fa-ban"></i> Cancelar</a>
                                 </div>
@@ -100,44 +86,3 @@
             </div>
 @endsection
 
-@section('js')
-
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    @if(session('eliminar') == 'ok')
-        <script>
-            Swal.fire(
-                '¡Eliminado!',
-                'El producto se elimino con exito.',
-                'success'
-            )
-        </script>
-    @endif
-
-    <script>
-        function deleteAlert(e){
-            e.preventDefault();
-            Swal.fire({
-                title: '¿Estás seguro?',
-                text: "El producto se eliminara",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#ffc298',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Sí, eliminar',
-                cancelButtonText: 'Cancelar'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    /*Swal.fire(
-                        'Deleted!',
-                        'Your file has been deleted.',
-                        'success'
-                    )*/
-                    $('#formulario-eliminar').submit();
-
-                }
-            })
-        }
-
-    </script>
-@endsection

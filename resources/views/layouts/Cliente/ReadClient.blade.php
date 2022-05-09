@@ -42,9 +42,15 @@
                                     <a href="{{route('edit', $clientes->id_cliente)}}">
                                         <i class="fas fa-pencil-alt btn btn-outline-warning mb-2 mr-2"> Actualizar</i>
                                     </a>
-                                    <a href="#">
-                                        <i class="far fa-trash-alt btn btn-outline-danger mb-2 mr-2"> Eliminar</i>
-                                    </a>
+
+                                    <form action="{{route('delete', $clientes->id_cliente)}}" method="POST" class="#formulario-eliminar">
+                                    @csrf @method('DELETE')
+
+                                        <button type="submit" onclick="deleteAlert(event)" class="btn btn-outline-danger mb-2 mr-2" >
+                                           <i class="far fa-trash-alt"> Eliminar</i> 
+                                        </button>
+                                    </form>
+                                </div>
                             </td>
 
 
@@ -59,4 +65,62 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('js')
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!--Mensaje de Modificacion-->
+    @if(session('Editar')=='ok')
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Cliente modificado exitosamente',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        </script>
+    @endif
+
+    <!--Mensaje de Guardado-->
+    @if(session('Guardado')=='Datos del cliente guardado')
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Se registró el cliente de forma éxitosa',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        </script>
+    @endif
+
+    <!--Mensaje de Eliminado-->
+    @if(session('clienteDestroy')=='Cliente Eliminado')
+        <script>
+            Swal.fire(
+                '¡Eliminado!',
+                'Se eeliminó el cliente de forma éxitosa',
+                'success'
+            )
+        </script>
+    @endif
+
+    <script>
+        function eliminar(studen){
+                Swal.fire({
+                    title: '¿Esta seguro que desea eliminar al Estudiante?',
+                    text: "Si presiona si se eliminara definitivamente",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Si eliminar',
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        document.getElementById(studen).submit()
+                    }
+                })
+            }
+    </script>
 @endsection

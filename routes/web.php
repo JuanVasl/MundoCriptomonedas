@@ -28,7 +28,8 @@ Route::post('/crear',[ControllerCatalogoCriptomoneda::class, 'store'])->name('cr
 Route::patch('/actualizarCripto/{criptoCoin}r',[ControllerCatalogoCriptomoneda::class, 'update'])->name('actualizarCripto');
 Route::get('/editar/{criptoCoin}',  [ControllerCatalogoCriptomoneda::class, 'editar'])->name('editar');
 
-Route::delete('/delete/{codigo_cripto}',[ControllerCatalogoCriptomoneda::class, 'delete']) ->name('delete');//Ruta para eliminar criptomonedas
+
+Route::delete('deletecripto/{codigo_cripto}', [ControllerCatalogoCriptomoneda::class,'deletecripto'])->name('deletecripto');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -43,8 +44,12 @@ Route::get('/read/Vista',  [ClienteController::class, 'read'])->name('read');
 Route::get('/edit/{cliente}',  [ClienteController::class, 'edit'])->name('edit');
 Route::patch('/actualiza/{cliente}r',[ClienteController::class, 'update'])->name('actualizar');
 
+//ruta para eliminar
+Route::delete('delete/{cliente}', [ClienteController::class,'delete'])->name('delete');
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/reglas', [ClienteController::class, 'reglas'])->name('reglas');
