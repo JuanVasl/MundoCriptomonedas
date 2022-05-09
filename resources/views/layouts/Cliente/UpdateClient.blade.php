@@ -79,9 +79,22 @@
                                 <br>
                                 <div class="row form-group">
                                     <button id="guardado" type="submit"
-                                            class="btn btn-outline-success col-md-4 offset-2 mr-3"><i
+                                            class="btn btn-outline-success col-md-4 offset-2 mr-3" onclick="modCliente()"><i
                                             class="fas fa-save"></i> Modificar Cliente
                                     </button>
+
+                                    <script>
+                                function modCliente() {
+                                Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Se ha actualizado el cliente',
+                                showConfirmButton: true,
+                                timer: 15000
+                                })
+                                }
+                                </script>
+                                    
                                     <a class="btn btn-outline-danger btn-xs col-md-4" href=" {{ url('/home') }}"><i
                                             class="fas fa-ban"></i> Cancelar</a>
                                 </div>

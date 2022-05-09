@@ -52,7 +52,7 @@ class ControllerCatalogoCriptomoneda extends Controller
         ]);
 
 
-        return redirect()->route('cripto.register')->with('status', 'Producto registrado');
+        return redirect()->route('cripto.index')->with('status', 'Producto registrado');
     }
 
 
@@ -62,7 +62,6 @@ class ControllerCatalogoCriptomoneda extends Controller
         return view ('criptomoneda.UpdateCriptomoneda', compact('criptoCoin'));
 
     }
-
 
     //para editar usuario
     public function update(Request $request, catalogo_criptomoneda $criptoCoin)
