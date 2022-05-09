@@ -16,11 +16,11 @@
                 <table class="table table-light table-bordered table-hover text-center">
                     <thead>
                     <tr>
+                        <th>Fotografia</th>
                         <th>Codigo</th>
                         <th>Nombre</th>
                         <th>Descripción</th>
                         <th>Precio</th>
-                        <th>Fotografia</th>
                         <th>Acciones</th>
                     </tr>
                     </thead>
@@ -28,11 +28,11 @@
                     <tbody>
                     @foreach($criptoCoin as $customer)
                         <tr>
+                            <td>{{$customer->fotografia}}</td>
                             <td>{{$customer->codigo_cripto}}</td>
                             <td>{{$customer->nombre_cripto}}</td>
                             <td>{{$customer->descripcion_cripto}}</td>
                             <td>{{$customer->precio_cripto}}</td>
-                            <td>{{$customer->fotografia}}</td>
                             <td >
 
                                 <div class="btn btn-group">

@@ -18,11 +18,11 @@
                     <thead>
                     <tr>
                         <th>No.Pasaporte</th>
+                        <th>Fotografia</th>
                         <th>Nombre del Cliente</th>
                         <th>Telefono</th>
                         <th>Pais</th>
                         <th>Edad</th>
-                        <th>Fotografia</th>
                         <th>Acciones</th>
                     </tr>
                     </thead>
@@ -31,11 +31,11 @@
                     @foreach($cliente as $clientes)
                         <tr>
                             <td>{{$clientes->id_cliente}}</td>
+                            <td>{{$clientes->fotografia}}</td>
                             <td>{{$clientes->nombre_persona}}</td>
                             <td>{{$clientes->telefono}}</td>
                             <td>{{$clientes->pais}}</td>
                             <td>{{$clientes->edad}}</td>
-                            <td>{{$clientes->fotografia}}</td>
                             <td>
                                 <div class="btn-group">
 
@@ -47,7 +47,7 @@
                                     @csrf @method('DELETE')
 
                                         <button type="submit" onclick="deleteAlert(event)" class="btn btn-outline-danger mb-2 mr-2" >
-                                           <i class="far fa-trash-alt"> Eliminar</i> 
+                                           <i class="far fa-trash-alt"> Eliminar</i>
                                         </button>
                                     </form>
                                 </div>
