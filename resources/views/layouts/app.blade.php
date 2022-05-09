@@ -58,21 +58,10 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}" >
-                    {{ config('app.name', 'Laravel') }}
+                    API
                 </a>
                 <form>
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="https://github.com/JuanVasl/MundoCriptomonedas.git" >
-                                <i class="fa-2x fab fa-github-square"></i>
-                            </a>
-                        </li>
-
-                        <li class="nav-item ">
-                            <a class="nav-link" href="" style="color: #E74C3C;">
-                                <i class="fa-2x fab fa-youtube"></i>
-                            </a>
-                        </li>
 
                         <li class="nav-item ">
                             <a class="nav-link" href="/read/Vista" style="color: #2155cd;">
@@ -82,19 +71,35 @@
 
                         <li class="nav-item ">
                             <a class="nav-link" href="/listar" style="color: #E74C3C;">
-                            <i class=" fa-2x row mb-0 fab fa-bitcoin"></i>
+                            <i class=" fa-2x fab fa-bitcoin"></i>
                             </a>
                         </li>
 
                         <li class="nav-item ">
                             <a class="nav-link" href="/" style="color: #E74C3C;">
-                            <i class=" fa-2x  fa fa-file-text" aria-hidden="true"></i>
+                            <i class=" fa-2x fa fa-file-text" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/reglas" style="color: #2155CD;">
+                            <i class=" fa-2x fas ms-0 fa-file-word"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="https://juanvas.kanbantool.com/b/834287#?" style="color: #F7DC6F;">
+                                <i class="fa-2x  fas fa-chalkboard-teacher"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="https://github.com/JuanVasl/MundoCriptomonedas.git" >
+                                <i class="fa-2x fab fa-github-square"></i>
                             </a>
                         </li>
 
                         <li class="nav-item ">
-                            <a class="nav-link" href="/reglas" style="color: #2155CD;">
-                            <i class=" fa-2x fas fa-file-word"></i>
+                            <a class="nav-link" href="" style="color: #E74C3C;">
+                                <i class="fa-2x fab fa-youtube"></i>
                             </a>
                         </li>
 
@@ -152,7 +157,7 @@
         <main class="py-4">
             @yield('content')
         </main>
-    </div>        
+    </div>
     <script src="{{asset('js/app.js')}}"></script>
  @yield('js')<!--Ayuda con mostrar el mensaje de error-->
 </body>

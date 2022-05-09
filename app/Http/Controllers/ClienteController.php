@@ -96,7 +96,7 @@ class ClienteController extends Controller
     }
 
 
-   
+
    //para eliminar usuario
    public function delete($id_cliente)
    {
