@@ -87,7 +87,7 @@ class ControllerCatalogoCriptomoneda extends Controller
     }
 
     //para eliminar criptomoneda
-    public function delete ($codigo_cripto)
+    public function deletecripto($codigo_cripto)
     {
         catalogo_criptomoneda::destroy($codigo_cripto);
 
