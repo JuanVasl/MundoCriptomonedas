@@ -73,10 +73,10 @@
                             </a>
                         </li>
                         <a class="nav-link" href="" style="color: #E74C3C;">
-                        
-                        </li class="nav-item"> 
+
+                        </li class="nav-item">
                         <li class="nav-item ">
-                            <a class="nav-link" href="/" style="color: #E74C3C;">
+                            <a class="nav-link" href="/listar" style="color: #E74C3C;">
                             <i class=" fa-2x row mb-0 fab fa-bitcoin"></i>
                             </a>
                         </li>

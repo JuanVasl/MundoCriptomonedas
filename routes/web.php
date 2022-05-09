@@ -28,7 +28,7 @@ Route::post('/crear',[ControllerCatalogoCriptomoneda::class, 'store'])->name('cr
 Route::patch('/actualizarCripto/{criptoCoin}r',[ControllerCatalogoCriptomoneda::class, 'update'])->name('actualizarCripto');
 Route::get('/editar/{criptoCoin}',  [ControllerCatalogoCriptomoneda::class, 'editar'])->name('editar');
 
-Route::delete('/delete/{codigo_cripto}',[ControllerCatalogoCriptomoneda::class, 'delete']) ->name('delete');//Ruta para eliminar criptomonedas
+Route::delete('delete/{codigo_cripto}', [ControllerCatalogoCriptomoneda::class,'delete'])->name('delete');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

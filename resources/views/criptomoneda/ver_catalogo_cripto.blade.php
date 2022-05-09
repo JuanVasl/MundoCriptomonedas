@@ -8,7 +8,7 @@
                 <a class="btn btn-success font-weight-bold mb-2" href="{{url('/registrar') }}"> Registrar criptomonedas </a>
 
                 <!--Mensaje de Alerta-->
-                @if(session('criptomonedaEliminada'))
+                @if(session('criptomonedaDestroy'))
                     <div class="alert alert-danger">
                         {{session('criptomonedaEliminada')}}
                     </div>
@@ -35,16 +35,20 @@
                     <td>{{$customer->descripcion_cripto}}</td>
                     <td>{{$customer->precio_cripto}}</td>
                     <td >
+
                         <div class="btn-group">
                             <a class="btn btn-primary mb-2 mr-3">
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
+
                             <form action="{{route('delete', $customer->codigo_cripto)}}" method="POST">
                                 @csrf @method('DELETE')
-                                <button type="submit" onclick="return confirm('Desea eliminar el registro')" class="btn btn-danger">
-                                    <i class="fas fa-trash-alt"></i>
+
+                                <button type="submit" onclick="return confirm('¿Desea eliminar la criptomoneda?');" class="btn btn-outline-danger mb-2 mr-2">
+                                    <i class="far fa-trash-alt"> Eliminar</i>
                                 </button>
                             </form>
+
                         </div>
                     </td>
                 </tr>
