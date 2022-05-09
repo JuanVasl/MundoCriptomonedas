@@ -28,7 +28,8 @@ Route::post('/crear',[ControllerCatalogoCriptomoneda::class, 'store'])->name('cr
 Route::patch('/actualizarCripto/{criptoCoin}r',[ControllerCatalogoCriptomoneda::class, 'update'])->name('actualizarCripto');
 Route::get('/editar/{criptoCoin}',  [ControllerCatalogoCriptomoneda::class, 'editar'])->name('editar');
 
-Route::delete('deletecripto/{codigo_cripto}', [ControllerCatalogoCriptomoneda::class,'delete'])->name('delete');
+
+Route::delete('deletecripto/{codigo_cripto}', [ControllerCatalogoCriptomoneda::class,'deletecripto'])->name('deletecripto');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

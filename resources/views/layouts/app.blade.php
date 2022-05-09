@@ -67,29 +67,31 @@
                                 <i class="fa-2x fab fa-youtube"></i>
                             </a>
                         </li>
+
                         <li class="nav-item ">
                             <a class="nav-link" href="/read/Vista" style="color: #2155cd;">
                             <i class=" fa-2x fas fa-users"></i>
                             </a>
                         </li>
-                        <a class="nav-link" href="" style="color: #E74C3C;">
 
-                        </li class="nav-item">
                         <li class="nav-item ">
                             <a class="nav-link" href="/listar" style="color: #E74C3C;">
                             <i class=" fa-2x row mb-0 fab fa-bitcoin"></i>
                             </a>
                         </li>
+
                         <li class="nav-item ">
                             <a class="nav-link" href="/" style="color: #E74C3C;">
                             <i class=" fa-2x  fa fa-file-text" aria-hidden="true"></i>
                             </a>
                         </li>
+
                         <li class="nav-item ">
                             <a class="nav-link" href="/reglas" style="color: #2155CD;">
                             <i class=" fa-2x fas fa-file-word"></i>
                             </a>
                         </li>
+
                     </ul>
                 </form>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
