@@ -41,7 +41,7 @@
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
 
-                            <form action="{{route('delete', $customer->codigo_cripto)}}" method="POST">
+                            <form action="{{route('deletecripto', $customer->codigo_cripto)}}" method="POST">
                                 @csrf @method('DELETE')
 
                                 <button type="submit" onclick="return confirm('¿Desea eliminar la criptomoneda?');" class="btn btn-outline-danger mb-2 mr-2">
